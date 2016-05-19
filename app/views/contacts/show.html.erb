@@ -1,0 +1,25 @@
+
+<div id="contacts">
+  <div class="contact">
+    <p class="contact_image">
+    <%= image_tag @contact.image.url(:medium) %>
+    </p>
+    <h2 class="contact_name">
+      <%= @contact.name %>
+    </h2>
+    <p class="contact_title">
+      <%= @contact.title %>
+    </p>
+    <p class="contact_location">
+      <%= @contact.location %>
+    </p>
+    <p class="contact_description">
+      <%= @contact.description %>
+    </p>
+  </div>
+</div>
+<div id="links">
+  <%= link_to "Back", root_path, class: "btn btn-sm btn-default" %>
+  <%= link_to "Edit", edit_contact_path(@contact), class: "btn btn-sm btn-default" %>
+  <%= link_to "Delete", contact_path(@contact), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-default" %>
+</div>

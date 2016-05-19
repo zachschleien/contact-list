@@ -1,0 +1,24 @@
+<div id="contacts">
+  <% @contacts.each do |contact| %>
+    <div class="contact">
+      <p class="contact_image">
+        <%= image_tag contact.image.url(:thumb) %>
+      </p>
+      <h2 class= "contact_name">
+        <%= link_to contact.name, contact %>
+      </h2>
+      <p class= "contact_title">
+        <%= contact.title %>
+      </p>
+      <p class= "contact_location">
+        <%= contact.location %>
+      </p>
+      <p class= "contact_description">
+        <%= contact.description %>
+      </p>
+    </div>
+  <% end %>
+
+<div class="links">
+  <%= link_to 'New Contact', new_contact_path %>
+</div>
